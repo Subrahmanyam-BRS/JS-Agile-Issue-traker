@@ -44,6 +44,19 @@
         <h2 class="display-6 pb-2">Create Agile Story</h2>
         <form id="login-form">
           <div class="mb-3">
+            <label for="description" class="form-label">Task Title</label>
+            <textarea
+              class="form"
+              cols="40"
+              rows="2"
+              placeholder="enter task title"
+              id="Task Title"
+            ></textarea>
+            <div id="Task Title" class="form-text"></div>
+          </div>
+
+        <form id="login-form">
+          <div class="mb-3">
             <label for="description" class="form-label">Task Description</label>
             <textarea
               class="form-control"
@@ -54,6 +67,7 @@
             ></textarea>
             <div id="descLength" class="form-text"></div>
           </div>
+          
           <div class="mb-3">
             <label for="assignedto" class="form-label">Assigned To</label>
             <select class="form-select" id="assignedto" required>

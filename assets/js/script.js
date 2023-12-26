@@ -118,6 +118,12 @@ initApp();
 // form validation
 const formValidate = (e) => {
   e.preventDefault();
+  if (tasktitle.value === "") {
+    alert("Please enter task title");
+    tasktitle.focus();
+    return;
+  }
+
   if (description.value === "") {
     alert("Please enter description");
     description.focus();
@@ -179,3 +185,5 @@ function setTheme(theme) {
   localStorage.setItem("movie-theme", theme);
 }
 setTheme(localStorage.getItem("movie-theme") || chathams_blue);
+
+
