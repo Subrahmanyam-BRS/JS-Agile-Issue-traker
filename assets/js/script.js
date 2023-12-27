@@ -1,5 +1,3 @@
-
-
 // Init priority list, assigned to list and stories array
 const priorityList = ["Low", "Medium", "High"];
 const assignedToList = ["Edwin", "Tom", "Carl", "Jerome", "Carmelo"];
