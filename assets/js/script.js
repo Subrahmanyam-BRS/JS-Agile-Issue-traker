@@ -1,3 +1,5 @@
+
+
 // Init priority list, assigned to list and stories array
 const priorityList = ["Low", "Medium", "High"];
 const assignedToList = ["Edwin", "Tom", "Carl", "Jerome", "Carmelo"];
@@ -7,12 +9,14 @@ let storyList = [];
 let chathams_blue = "#1A4B84";
 
 // Elements
+
 const description = document.getElementById("description");
 const assignedto = document.getElementById("assignedto");
 const priority = document.getElementById("priority");
 const storySubmitBtn = document.getElementById("storySubmitBtn");
 const storyCardList = document.getElementById("storyCardList");
 const descrptionLength = document.getElementById("descLength");
+let tasktitle = document.getElementById("tasktitle");
 const maxLength = 100;
 const warnLength = 90;
 
@@ -75,6 +79,7 @@ const updateList = (newStory, updatedList) => {
             ${issue.storyStatus === "open" ? "open" : "closed"}</span>
             </div>
             <div class="card-body">
+            <h4>Title : ${issue.tasktitle}</h4>
             <p class="text-start pb-1">Assigned to : ${
               assignedToList[issue.assignedTo]
             }</p>
@@ -118,12 +123,11 @@ initApp();
 // form validation
 const formValidate = (e) => {
   e.preventDefault();
-  if (tasktitle.value === "") {
-    alert("Please enter task title");
+  if (tasktitle.value ===""){
+    alert("please enter task title");
     tasktitle.focus();
     return;
   }
-
   if (description.value === "") {
     alert("Please enter description");
     description.focus();
@@ -149,8 +153,10 @@ const formValidate = (e) => {
     description: description.value,
     assignedTo: assignedto.value,
     priority: priority.value,
+    tasktitle: tasktitle.value,
     storyStatus: "open",
   };
+   tasktitle.value="";
   description.value = "";
   assignedto.value = "";
   priority.value = "";
@@ -185,5 +191,3 @@ function setTheme(theme) {
   localStorage.setItem("movie-theme", theme);
 }
 setTheme(localStorage.getItem("movie-theme") || chathams_blue);
-
-
